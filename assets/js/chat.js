@@ -209,15 +209,19 @@ function setupMobileView() {
 
     // Apply mobile classes initially
     const updateView = () => {
+        const chatMain = document.getElementById('chat-main-area');
         if (window.innerWidth < 1024) { // lg breakpoint
             if (activeMentorId) {
                 sidebar.classList.add('hidden');
+                if (chatMain) chatMain.classList.remove('hidden');
             } else {
                 sidebar.classList.remove('hidden');
                 sidebar.classList.add('w-full');
+                if (chatMain) chatMain.classList.add('hidden');
             }
         } else {
             sidebar.classList.remove('hidden', 'w-full');
+            if (chatMain) chatMain.classList.remove('hidden');
         }
     };
 
