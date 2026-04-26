@@ -205,7 +205,7 @@ function renderMentorList(mentors, reqMap) {
         if (status === 'pending') {
             actionBtn = `<span class="px-3 py-1.5 bg-amber-100 text-amber-700 rounded-lg text-[10px] font-black uppercase tracking-widest animate-pulse">Pending</span>`;
         } else if (status === 'accepted') {
-            actionBtn = `<a href="chat.html" class="px-3 py-1.5 bg-green-500 hover:bg-green-600 text-white rounded-lg text-xs font-bold transition-all flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[14px]">forum</span> Chat</a>`;
+            actionBtn = `<span class="px-3 py-1.5 bg-green-50 text-green-700 rounded-lg text-[10px] font-black uppercase tracking-widest border border-green-100">Enrolled</span>`;
         } else if (status === 'rejected') {
             actionBtn = `<span class="px-3 py-1.5 bg-slate-100 text-slate-400 rounded-lg text-[10px] font-black uppercase tracking-widest">Unavailable</span>`;
         }
@@ -725,7 +725,7 @@ function createMessageHTML(m, isMe) {
 }
 
 // Start
-initStudentForum();
+// initStudentForum(); // Removed as per dashboard cleanup policy
 
 // Initialize everything else
 initDashboard();
