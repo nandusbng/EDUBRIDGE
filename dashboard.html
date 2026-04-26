@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <!-- DEPLOYMENT_SYNC: v1.4.3-STABLE-FINAL -->
     <title>EduBridge - Student Dashboard</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
@@ -232,7 +231,7 @@
                     </div>
 
                     <!-- Main Study Area Preview -->
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <!-- Left: Learning -->
                         <div
                             class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-8 flex flex-col items-start gap-4 border border-primary/10">
@@ -246,18 +245,6 @@
                                 class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-xl transition-all mt-auto w-full text-center">Start Session</a>
                         </div>
                         
-                        <!-- Center: Mentor Connect -->
-                        <div id="student-mentor-widget" class="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-2xl p-6 shadow-sm flex flex-col gap-4">
-                            <div class="flex items-center justify-between">
-                                <h3 class="text-lg font-bold flex items-center gap-2 text-indigo-900 dark:text-indigo-100">
-                                    <span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400">group</span>
-                                    Peer Mentorship
-                                </h3>
-                            </div>
-                            <div id="available-mentors-list" class="space-y-4 max-h-72 overflow-y-auto no-scrollbar flex-1 relative">
-                                <div class="p-6 text-center text-indigo-400/70 italic text-sm">Loading mentors...</div>
-                            </div>
-                        </div>
 
                         <!-- Right: Live Classes -->
                         <div
