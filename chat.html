@@ -84,7 +84,7 @@
             </aside>
 
             <!-- Conversations List -->
-            <div class="w-80 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col shrink-0 lg:ml-64 relative">
+            <div id="conversations-sidebar" class="w-80 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col shrink-0 lg:ml-64 relative z-30 transition-transform duration-300">
                 <div class="p-4 border-b border-slate-100 dark:border-slate-800">
                     <h3 class="text-lg font-bold">Messages</h3>
                     <div class="flex mt-3 gap-4">
@@ -110,12 +110,15 @@
             <!-- Active Chat Area -->
             <main class="flex flex-col flex-1 bg-background-light dark:bg-background-dark overflow-hidden">
                 <!-- Chat Header -->
-                <div class="flex items-center justify-between px-6 py-3 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                <div class="flex items-center justify-between px-4 lg:px-6 py-3 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
                     <div class="flex items-center gap-3">
-                        <div class="size-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400"><span class="material-symbols-outlined">forum</span></div>
-                        <div>
-                            <p id="active-chat-name" class="text-base font-bold leading-none mb-1 text-slate-900 dark:text-slate-100">Select a Forum</p>
-                            <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">End-to-end synced discussion</p>
+                        <button id="chat-back-btn" class="lg:hidden p-2 -ml-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
+                        <div class="size-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400 shrink-0"><span class="material-symbols-outlined">forum</span></div>
+                        <div class="min-w-0">
+                            <p id="active-chat-name" class="text-base font-bold leading-none mb-1 text-slate-900 dark:text-slate-100 truncate">Select a Forum</p>
+                            <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest truncate">End-to-end synced discussion</p>
                         </div>
                     </div>
                     <div id="session-controls" class="hidden flex items-center gap-3">

@@ -197,6 +197,56 @@ async function init() {
 
     await loadMentors();
     setupInput();
+    setupMobileView();
+}
+
+// ── Mobile View Management ──────────────────────────────────────────────
+function setupMobileView() {
+    const sidebar = document.getElementById('conversations-sidebar');
+    const backBtn = document.getElementById('chat-back-btn');
+    
+    if (!sidebar) return;
+
+    // Apply mobile classes initially
+    const updateView = () => {
+        if (window.innerWidth < 1024) { // lg breakpoint
+            if (activeMentorId) {
+                sidebar.classList.add('hidden');
+            } else {
+                sidebar.classList.remove('hidden');
+                sidebar.classList.add('w-full');
+            }
+        } else {
+            sidebar.classList.remove('hidden', 'w-full');
+        }
+    };
+
+    window.addEventListener('resize', updateView);
+    updateView();
+
+    if (backBtn) {
+        backBtn.onclick = () => {
+            activeMentorId = null;
+            updateView();
+            // Show placeholder in chat area
+            const box = document.getElementById('chat-messages');
+            if (box) {
+                box.innerHTML = `
+                    <div class="flex h-full items-center justify-center text-slate-400 flex-col gap-2">
+                        <span class="material-symbols-outlined text-4xl">forum</span>
+                        <p class="text-sm font-medium">Select a mentor cohort from the left to start chatting.</p>
+                    </div>
+                `;
+            }
+            const headerName = document.getElementById('active-chat-name');
+            if (headerName) headerName.textContent = "Select a Forum";
+            const blocker = document.getElementById('chat-blocker');
+            if (blocker) blocker.classList.remove('hidden');
+        };
+    }
+    
+    // Export updateView for other functions
+    window.updateChatMobileView = updateView;
 }
 
 // ── Load mentors sidebar with Status Filtering ──
@@ -530,6 +580,9 @@ window.selectMentorRoom = async function(mentorId, mentorName) {
     activeMentorName = mentorName;
     activeDoubtSessionId = null; // Reset filter when switching mentors
     
+    // Trigger mobile view update
+    if (window.updateChatMobileView) window.updateChatMobileView();
+
     await checkDoubtSessionStatus();
 
     const headerName = document.getElementById('active-chat-name');
