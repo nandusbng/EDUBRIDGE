@@ -81,12 +81,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // ── 0.1 Cross-Portal Redirection Guard ────────────────────────────
     let userProfile = null;
-    if (session && !isLanding) {
+    if (session) {
         const { data: profile } = await supabase.from('users').select('*').eq('id', session.user.id).single();
         userProfile = profile;
         
         // ── 0.2 Streak System Initialization (Excluded for Admin) ───────
-        if (profile && profile.role !== 'admin') {
+        if (profile && profile.role !== 'admin' && !isLanding) {
             import('./streak.js').then(({ streakSystem }) => {
                 streakSystem.init();
             });
@@ -96,10 +96,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             const path = window.location.pathname;
             const role = profile.role;
             
-            // Redirect faculty/mentors away from student dashboard.html
-            if (path.endsWith('dashboard.html') || (path === '/' && session)) {
+            // Redirect to respective portals if at root/landing OR on the wrong portal
+            if (path.endsWith('dashboard.html') || path.endsWith('index.html') || path === '/') {
                 if (role === 'faculty') { window.location.href = '/faculty.html'; return; }
                 if (role === 'mentor')  { window.location.href = '/mentor.html'; return; }
+                if (role === 'student' && (path.endsWith('index.html') || path === '/')) { 
+                    window.location.href = '/dashboard.html'; 
+                    return; 
+                }
             }
             
             // Redirect students away from specialized portals
