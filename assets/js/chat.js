@@ -216,7 +216,7 @@ function setupMobileView() {
         
         if (isMobile) {
             // Mobile Logic: Mutual Exclusivity
-            if (activeMentorId && isSidebarCollapsed) {
+            if (isSidebarCollapsed) {
                 sidebar.classList.add('hidden');
                 if (chatMain) chatMain.classList.remove('hidden');
                 if (backBtn) backBtn.querySelector('.material-symbols-outlined').textContent = 'arrow_back';
@@ -224,7 +224,7 @@ function setupMobileView() {
                 sidebar.classList.remove('hidden');
                 sidebar.classList.add('w-full');
                 if (chatMain) chatMain.classList.add('hidden');
-                isSidebarCollapsed = false; // Reset on mobile when showing list
+                // isSidebarCollapsed = false; // Don't force reset here, let it be controlled by buttons
             }
         } else {
             // Desktop Logic: Collapsible Sidebar
@@ -250,12 +250,7 @@ function setupMobileView() {
 
     if (backBtn) {
         backBtn.onclick = () => {
-            if (window.innerWidth < 1024) {
-                activeMentorId = null;
-                isSidebarCollapsed = false;
-            } else {
-                isSidebarCollapsed = !isSidebarCollapsed;
-            }
+            isSidebarCollapsed = false;
             updateView();
         };
     }
