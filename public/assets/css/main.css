@@ -1,0 +1,205 @@
+/* Main CSS for EduBridge - White Theme Focus */
+:root {
+    --primary: #0056b2;
+    --background-light: #f5f7f8;
+    --background-dark: #0f1923;
+}
+
+body {
+    background-color: var(--background-light);
+    color: #1a1a1a;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sidebar Active State Utility */
+.nav-link-active {
+    background-color: rgb(239 246 255); /* blue-50 */
+    color: rgb(29 78 216); /* blue-700 */
+    border-right-width: 4px;
+    border-color: rgb(29 78 216); /* blue-700 */
+    font-weight: bold;
+}
+
+.dark .nav-link-active {
+    background-color: rgba(30, 58, 138, 0.2); /* blue-900/20 */
+    color: rgb(96 165 250); /* blue-400 */
+    border-color: rgb(96 165 250); /* blue-400 */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   🖨️ PRINT ARCHITECTURE (Academic Tracking Sheets)
+   ────────────────────────────────────────────────────────────────────────── */
+@media print {
+    /* Hide all digital UI when printing from main window (fallback) */
+    body header, body aside, body main, .tab-content, #interaction-detail-modal, .modal-backdrop {
+        display: none !important;
+    }
+}
+
+/* 📄 User-Provided Tracking Sheet Styles (Scoped to .page) */
+.page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: #fff;
+    padding: 18mm 14mm 15mm 14mm;
+    color: #000;
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+    font-family: "Times New Roman", serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.logo-box {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-align: center;
+}
+
+.right-logos {
+    display: flex;
+    gap: 8px;
+}
+
+.small-logo {
+    width: 72px;
+    height: 72px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    text-align: center;
+}
+
+.heading {
+    flex: 1;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.heading h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.heading h2 {
+    font-size: 18px;
+    margin-top: 4px;
+}
+
+.main-title {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+.info {
+    margin-top: 18px;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.section-title {
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+}
+
+.page td, .page th {
+    border: 1px solid #000;
+    padding: 6px 8px;
+    vertical-align: top;
+    font-size: 16px;
+    color: #000;
+}
+
+.page th {
+    font-weight: bold;
+    text-align: left;
+}
+
+.label {
+    width: 38%;
+}
+
+.big-box {
+    height: 85px;
+}
+
+.track-table td,
+.track-table th {
+    text-align: left;
+}
+
+.track-table tbody td {
+    height: 90px;
+}
+
+.center {
+    text-align: center;
+}
+
+.footer-count {
+    text-align: right;
+    margin-top: 18px;
+    font-size: 18px;
+}
+
+.data-fill {
+    font-weight: bold;
+}
+
+
