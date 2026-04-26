@@ -559,7 +559,7 @@
                 }
                 const profile = await auth.getUserProfile(user.id);
                 if (profile) {
-                    window.location.href = '/index.html';
+                    window.location.href = '/dashboard.html';
                     return;
                 }
                 // Valid user but no profile — go to onboarding
@@ -699,7 +699,7 @@
 
                 if (profile) {
                     // Already has profile, direct to dashboard
-                    window.location.href = '/index.html';
+                    window.location.href = '/dashboard.html';
                 } else {
                     // Start Onboarding
                     openAuthModal();
@@ -746,7 +746,7 @@
 
             try {
                 await auth.saveUserProfile(profile);
-                window.location.href = '/index.html';
+                window.location.href = '/dashboard.html';
             } catch (err) {
                 console.error(err);
                 const fe = document.getElementById('form-error');

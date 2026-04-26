@@ -71,11 +71,11 @@ window.getAvatarUrl = function(email, size = 100) {
 document.addEventListener('DOMContentLoaded', async () => {
 
     // ── 0. Portal Guard ────────────────────────────────────────────────
-    const isLanding = window.location.pathname.includes('landing.html');
+    const isLanding = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
     const { data: { session } } = await supabase.auth.getSession();
 
     if (!session && !isLanding) {
-        window.location.href = '/landing.html';
+        window.location.href = '/index.html';
         return;
     }
 
@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             const path = window.location.pathname;
             const role = profile.role;
             
-            // Redirect faculty/mentors away from student index.html
-            if (path.endsWith('index.html') || path === '/') {
+            // Redirect faculty/mentors away from student dashboard.html
+            if (path.endsWith('dashboard.html') || (path === '/' && session)) {
                 if (role === 'faculty') { window.location.href = '/faculty.html'; return; }
                 if (role === 'mentor')  { window.location.href = '/mentor.html'; return; }
             }
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Redirect students away from specialized portals
             if (role === 'student') {
                 if (path.includes('faculty.html') || path.includes('mentor.html') || path.includes('admin.html')) {
-                    window.location.href = '/index.html';
+                    window.location.href = '/dashboard.html';
                     return;
                 }
             }
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelectorAll('nav a, aside a').forEach(link => {
         const href = link.getAttribute('href');
         if (href && !href.startsWith('#') &&
-            (path.endsWith(href) || (path === '/' && href === 'index.html'))) {
+            (path.endsWith(href) || (path === '/' && href === 'index.html') || (path.endsWith('dashboard.html') && href === 'dashboard.html'))) {
             link.classList.add('nav-link-active');
             link.classList.remove('text-slate-600', 'dark:text-slate-400');
         }
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         e.preventDefault();
         if (confirm('Are you sure you want to sign out?')) {
             await supabase.auth.signOut();
-            window.location.href = '/landing.html';
+            window.location.href = '/index.html';
         }
     });
 

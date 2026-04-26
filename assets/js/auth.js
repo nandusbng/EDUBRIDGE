@@ -5,7 +5,7 @@ export async function signInWithGoogle() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: window.location.origin + '/landing.html'
+      redirectTo: window.location.origin + '/index.html'
     }
   });
   if (error) throw error;
@@ -71,7 +71,7 @@ export async function saveUserProfile(profileData) {
 // --- Navigation Logic ---
 export function getRedirectUrl(role) {
   if (role === 'admin') return '/admin.html';
-  if (role === 'mentor') return '/index.html'; // Adjust if separate mentor dashboard exists
-  if (role === 'faculty') return '/index.html'; // Adjust if separate faculty dashboard exists
-  return '/index.html';
+  if (role === 'mentor') return '/mentor.html';
+  if (role === 'faculty') return '/faculty.html';
+  return '/dashboard.html';
 }
