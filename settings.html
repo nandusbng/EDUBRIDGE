@@ -210,76 +210,84 @@
                     </div>
                 </section>
 
-                <!-- Project Leadership Section -->
+                <!-- Debug Section (For testing purposes) -->
                 <section class="space-y-6">
                     <div class="flex items-center gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
-                        <div class="size-12 rounded-2xl bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 flex items-center justify-center shrink-0">
-                            <span class="material-symbols-outlined text-2xl">account_tree</span>
+                        <div class="size-12 rounded-2xl bg-purple-50 dark:bg-purple-900/20 text-purple-500 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-2xl">bug_report</span>
                         </div>
-                        <h2 class="text-2xl font-black tracking-tight text-slate-800 dark:text-white">Project Leadership</h2>
+                        <h2 class="text-2xl font-black tracking-tight text-slate-800 dark:text-white">System Testing</h2>
                     </div>
                     
-                    <!-- Lead Architect (Nanda) -->
-                    <div class="bg-gradient-to-br from-indigo-600 via-blue-700 to-indigo-800 rounded-[32px] p-8 text-white shadow-2xl relative overflow-hidden group mb-6">
-                        <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-125 transition-transform duration-700">
-                            <span class="material-symbols-outlined text-[120px]">terminal</span>
-                        </div>
-                        <div class="relative z-10">
-                            <p class="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-200 mb-2">Lead Architect & Developer</p>
-                            <h3 class="text-3xl font-black tracking-tighter mb-1">NANDA KISHORE SREEJITH</h3>
-                            <p class="text-xs font-bold text-indigo-100/80 uppercase tracking-widest mb-6">CSE 2024-2028 | Sri Venkateswara College Of Engineering</p>
-                            <div class="inline-block px-6 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-xl font-black tracking-tighter shadow-lg">SBNG</div>
-                        </div>
-                    </div>
-
-                    <!-- Faculty Patrons Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[32px] shadow-sm">
-                            <p class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 mb-4">Project Patron</p>
-                            <h4 class="text-lg font-black text-slate-800 dark:text-white tracking-tight">Dr. R ANITHA</h4>
-                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">Professor and Head / CSE</p>
-                        </div>
-                        <div class="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[32px] shadow-sm">
-                            <p class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 mb-4">Academic Advisor</p>
-                            <h4 class="text-lg font-black text-slate-800 dark:text-white tracking-tight">R K KAPILAVANI</h4>
-                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">Assistant Professor / CSE</p>
+                    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="size-10 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-500 flex items-center justify-center"><span class="material-symbols-outlined">restart_alt</span></div>
+                                <div>
+                                    <h4 class="font-bold text-sm">Wipe Engagement Cache</h4>
+                                    <p class="text-[10px] text-slate-500 font-medium">Resets local time-spent tracking for streak system verification.</p>
+                                </div>
+                            </div>
+                            <button id="debug-reset-streak" class="px-5 py-2.5 bg-purple-600 text-white rounded-xl font-black text-xs uppercase tracking-widest hover:bg-purple-700 transition-all shadow-lg shadow-purple-200 dark:shadow-none whitespace-nowrap">
+                                Reset Locally
+                            </button>
                         </div>
                     </div>
+                </section>
 
-                    <div class="mt-6 p-6 bg-indigo-50 dark:bg-indigo-900/10 rounded-[32px] border border-indigo-100 dark:border-indigo-900/30">
-                        <p class="text-xs text-indigo-600 dark:text-indigo-400 leading-relaxed italic font-medium text-center">
-                            "Special gratitude to the HOD and Assistant Professors for the opportunity to build this platform. Heartfelt thanks to my family for their constant support."
-                        </p>
+                <!-- Platform Credits Section -->
+                <section class="pt-10 border-t border-slate-200 dark:border-slate-800">
+                    <div class="bg-indigo-600 rounded-[40px] p-8 md:p-12 text-white relative overflow-hidden shadow-2xl shadow-indigo-200 dark:shadow-none">
+                        <!-- Background Glow -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                        
+                        <div class="relative z-10 space-y-8">
+                            <div class="flex items-center justify-between gap-6">
+                                <div class="space-y-2">
+                                    <div class="inline-block px-3 py-1 bg-white/10 rounded-full text-[10px] font-black uppercase tracking-widest">Platform Creator</div>
+                                    <h3 class="text-2xl font-black tracking-tight uppercase leading-tight">Nanda Kishore Sreejith</h3>
+                                    <p class="text-indigo-100 text-[11px] font-bold uppercase tracking-widest">CSE 2024-2028 | SVCE</p>
+                                </div>
+                                <div class="flex flex-col items-center gap-1 shrink-0">
+                                    <div class="size-16 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex items-center justify-center">
+                                        <span class="font-black text-xl tracking-tighter">SBNG</span>
+                                    </div>
+                                    <p class="text-[8px] font-black uppercase tracking-widest opacity-60">Signature</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-6 pt-6 border-t border-white/10">
+                                <p class="text-sm font-medium leading-relaxed opacity-90 italic">
+                                    "I would like to express my sincere gratitude to **Dr. R ANITHA** (Professor and Head/CSE) and **R K KAPILAVANI** (Assistant Professor/CSE) for the invaluable opportunity and guidance given to me to develop this wonderful platform. Special thanks to my family for their constant support."
+                                </p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                                        <p class="text-xs font-black uppercase tracking-widest opacity-60 mb-2">Mentor & HOD</p>
+                                        <p class="font-bold text-sm">Dr. R ANITHA</p>
+                                        <p class="text-[10px] opacity-70 mt-0.5">Professor and Head / CSE</p>
+                                    </div>
+                                    <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                                        <p class="text-xs font-black uppercase tracking-widest opacity-60 mb-2">Project Mentor</p>
+                                        <p class="font-bold text-sm">R K KAPILAVANI</p>
+                                        <p class="text-[10px] opacity-70 mt-0.5">Assistant Professor / CSE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 <!-- Destructive Actions -->
-                <div class="pt-10 border-t border-slate-200 dark:border-slate-800">
-                    <button onclick="supabase.auth.signOut().then(()=>window.location.href='/landing.html')" class="w-full p-6 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30 rounded-3xl flex items-center justify-center gap-3 text-red-600 font-black hover:bg-red-100 transition-all">
+                <div class="pt-10">
+                    <button onclick="supabase.auth.signOut().then(()=>window.location.href='/index.html')" class="w-full p-6 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30 rounded-3xl flex items-center justify-center gap-3 text-red-600 font-black hover:bg-red-100 transition-all">
                         <span class="material-symbols-outlined">logout</span> Log Out of All Sessions
                     </button>
                 </div>
-            </div>
-<!-- Credits Footer -->
-                    <footer class="mt-16 pt-12 border-t border-slate-200 dark:border-slate-800">
-                        <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-                            <div class="text-left">
-                                <p class="text-[9px] font-black uppercase tracking-widest text-indigo-500 mb-1">Architect & Lead Developer</p>
-                                <h4 class="text-base font-black text-slate-900 dark:text-white tracking-tight">NANDA KISHORE SREEJITH</h4>
-                                <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">CSE 2024-2028 | SVCE</p>
-                            </div>
-                            <div class="flex flex-col items-center md:items-end gap-1">
-                                <div class="px-4 py-1 bg-indigo-600 text-white rounded-xl text-xs font-black tracking-tighter">SBNG</div>
-                                <p class="text-[8px] font-black text-slate-400 uppercase tracking-widest">Digital Signature</p>
-                            </div>
-                        </div>
-                        <p class="text-[11px] text-slate-500 dark:text-slate-400 italic leading-relaxed text-center md:text-left max-w-3xl">
-                            "Special thanks to the **HOD of Computer Science Mam** and **Assistant Professors** for this opportunity. Grateful to my family for their constant support."
-                        </p>
-                        <div class="mt-12 pb-8 text-center text-[9px] font-black text-slate-400 dark:text-slate-600 uppercase tracking-[0.4em]">
-                            &copy; 2026 EDU BRIDGE ECOSYSTEM
-                        </div>
-                    </footer>
+
+                <footer class="py-12 text-center text-[10px] font-black text-slate-400 dark:text-slate-600 uppercase tracking-[0.4em]">
+                    &copy; 2026 EDU BRIDGE ECOSYSTEM
+                </footer>
         </main>
     </div>
 
