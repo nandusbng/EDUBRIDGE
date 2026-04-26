@@ -204,24 +204,44 @@ async function init() {
 function setupMobileView() {
     const sidebar = document.getElementById('conversations-sidebar');
     const backBtn = document.getElementById('chat-back-btn');
+    const collapseBtn = document.getElementById('collapse-sidebar-btn');
     
     if (!sidebar) return;
 
-    // Apply mobile classes initially
+    let isSidebarCollapsed = false;
+
     const updateView = () => {
         const chatMain = document.getElementById('chat-main-area');
-        if (window.innerWidth < 1024) { // lg breakpoint
-            if (activeMentorId) {
+        const isMobile = window.innerWidth < 1024;
+        
+        if (isMobile) {
+            // Mobile Logic: Mutual Exclusivity
+            if (activeMentorId && isSidebarCollapsed) {
                 sidebar.classList.add('hidden');
                 if (chatMain) chatMain.classList.remove('hidden');
+                if (backBtn) backBtn.querySelector('.material-symbols-outlined').textContent = 'arrow_back';
             } else {
                 sidebar.classList.remove('hidden');
                 sidebar.classList.add('w-full');
                 if (chatMain) chatMain.classList.add('hidden');
+                isSidebarCollapsed = false; // Reset on mobile when showing list
             }
         } else {
+            // Desktop Logic: Collapsible Sidebar
             sidebar.classList.remove('hidden', 'w-full');
             if (chatMain) chatMain.classList.remove('hidden');
+            
+            if (isSidebarCollapsed) {
+                sidebar.style.width = '0px';
+                sidebar.style.borderRightWidth = '0px';
+                sidebar.style.overflow = 'hidden';
+                if (backBtn) backBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+            } else {
+                sidebar.style.width = '320px'; // w-80
+                sidebar.style.borderRightWidth = '1px';
+                sidebar.style.overflow = '';
+                if (backBtn) backBtn.querySelector('.material-symbols-outlined').textContent = 'menu_open';
+            }
         }
     };
 
@@ -230,27 +250,27 @@ function setupMobileView() {
 
     if (backBtn) {
         backBtn.onclick = () => {
-            activeMentorId = null;
-            updateView();
-            // Show placeholder in chat area
-            const box = document.getElementById('chat-messages');
-            if (box) {
-                box.innerHTML = `
-                    <div class="flex h-full items-center justify-center text-slate-400 flex-col gap-2">
-                        <span class="material-symbols-outlined text-4xl">forum</span>
-                        <p class="text-sm font-medium">Select a mentor cohort from the left to start chatting.</p>
-                    </div>
-                `;
+            if (window.innerWidth < 1024) {
+                activeMentorId = null;
+                isSidebarCollapsed = false;
+            } else {
+                isSidebarCollapsed = !isSidebarCollapsed;
             }
-            const headerName = document.getElementById('active-chat-name');
-            if (headerName) headerName.textContent = "Select a Forum";
-            const blocker = document.getElementById('chat-blocker');
-            if (blocker) blocker.classList.remove('hidden');
+            updateView();
+        };
+    }
+
+    if (collapseBtn) {
+        collapseBtn.onclick = () => {
+            isSidebarCollapsed = true;
+            updateView();
         };
     }
     
-    // Export updateView for other functions
-    window.updateChatMobileView = updateView;
+    window.updateChatMobileView = () => {
+        if (window.innerWidth < 1024) isSidebarCollapsed = true; 
+        updateView();
+    };
 }
 
 // ── Load mentors sidebar with Status Filtering ──
