@@ -149,157 +149,113 @@
     <div class="hero">
         <div class="canvas-container">
             <canvas id="animation-canvas"></canvas>
+            <div class="overlay"></div>
         </div>
 
-        <div class="hero-content">
-            <h1 class="hero-title" id="hero-title">Beyond <br> Learning.</h1>
-            <div id="hero-cta" style="opacity: 0; transform: translateY(20px);">
-                <button id="hero-explore" class="cta-button">Explore Edu Bridge</button>
+        <div class="hero-content relative z-10 text-center px-6" id="hero-title" style="opacity:0; transform:translateY(30px);">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 mb-8">
+                <span class="size-2 bg-blue-500 rounded-full animate-pulse"></span>
+                <span class="text-[10px] font-black text-blue-400 uppercase tracking-[0.3em]">Institutional Innovation</span>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter leading-none mb-6">
+                Bridge the Gap. <br/> <span class="text-blue-500">Master the Lead.</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 font-medium leading-relaxed">
+                Empowering the next generation of engineers with a seamless, high-performance academic ecosystem designed for Sri Venkateswara College of Engineering.
+            </p>
+        </div>
+
+        <div class="absolute bottom-20 left-1/2 -translate-x-1/2 z-20" id="hero-cta" style="opacity:0; transform:translateY(20px);">
+            <div class="flex flex-col items-center gap-6">
+                <button id="hero-explore" class="px-10 py-5 bg-blue-600 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-500 transition-all shadow-2xl shadow-blue-900/40 transform hover:-translate-y-1">
+                    Explore Ecosystem
+                </button>
+                <div class="flex items-center gap-3 text-slate-500">
+                    <span class="text-[10px] font-bold uppercase tracking-widest">Scroll to dive</span>
+                    <span class="material-symbols-outlined animate-bounce">expand_more</span>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Stats Section -->
-    <section id="stats" class="section border-y border-white/5 bg-black/50">
-        <div class="container">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center reveal">
-                    <p id="stat-students" class="text-4xl font-black text-white mb-2">...</p>
-                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Active Students</p>
+    <!-- Content Sections -->
+    <div class="relative z-10 bg-black/50 backdrop-blur-3xl border-t border-white/5">
+        
+        <!-- Impact Stats -->
+        <section id="stats" class="py-32 px-6">
+            <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
+                <div class="reveal text-center">
+                    <h3 class="text-5xl font-black text-white mb-2 tabular-nums">1500+</h3>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Active Students</p>
                 </div>
-                <div class="text-center reveal" style="transition-delay: 0.1s;">
-                    <p id="stat-notes" class="text-4xl font-black text-white mb-2">...</p>
-                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Resource Notes</p>
+                <div class="reveal text-center">
+                    <h3 class="text-5xl font-black text-blue-500 mb-2 tabular-nums">450+</h3>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Digital Resources</p>
                 </div>
-                <div class="text-center reveal" style="transition-delay: 0.2s;">
-                    <p class="text-4xl font-black text-white mb-2">24/7</p>
-                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Peer Support</p>
+                <div class="reveal text-center">
+                    <h3 class="text-5xl font-black text-white mb-2 tabular-nums">98%</h3>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Success Rate</p>
                 </div>
-                <div class="text-center reveal" style="transition-delay: 0.3s;">
-                    <p class="text-4xl font-black text-white mb-2">100%</p>
-                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-500">Secure Access</p>
+                <div class="reveal text-center">
+                    <h3 class="text-5xl font-black text-blue-500 mb-2 tabular-nums">24/7</h3>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Academic Support</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Section -->
-    <section id="features" class="section">
-        <div class="container">
-            <div class="reveal mb-20 text-center max-w-2xl mx-auto">
-                <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Core Ecosystem</p>
-                <h2 class="text-4xl lg:text-5xl font-black mb-6">Engineered for Excellence.</h2>
-                <p class="text-slate-500 text-sm leading-relaxed">Our platform bridges the gap between traditional
-                    learning and modern academic success with a suite of professional tools.</p>
-            </div>
+        <!-- Features Showcase -->
+        <section id="features" class="py-32 px-6 bg-gradient-to-b from-transparent to-white/5">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row items-end justify-between gap-8 mb-20">
+                    <div class="max-w-xl">
+                        <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-6">Designed for <br/> <span class="text-blue-500">Academic Dominance.</span></h2>
+                        <p class="text-slate-400 font-medium">A full-stack solution tailored for the unique workflows of SVCE students and faculty.</p>
+                    </div>
+                </div>
 
-            <div class="features-grid">
-                <div class="feature-card reveal group">
-                    <div class="feature-card-inner">
-                        <div class="feature-badge">PRO</div>
-                        <span class="feature-icon material-symbols-outlined">auto_stories</span>
-                        <h3>Smart Notes Repo</h3>
-                        <p>Access high-quality academic notes organized by semester and subject. Direct downloads and
-                            instant previews for PDF/Images.</p>
-                        <div class="feature-footer">
-                            <span class="text-[10px] font-bold text-primary">RESOURCES</span>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="reveal bg-white/5 border border-white/10 p-8 rounded-[40px] hover:bg-white/10 transition-all">
+                        <div class="size-16 bg-blue-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
+                            <span class="material-symbols-outlined text-3xl">description</span>
                         </div>
+                        <h4 class="text-xl font-black text-white mb-4">Smart Notes Hub</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Instantly access verified study materials, organized by semester and subject with ultra-fast search.</p>
                     </div>
-                </div>
-                <div class="feature-card reveal group" style="transition-delay: 0.1s;">
-                    <div class="feature-card-inner">
-                        <div class="feature-badge">LIVE</div>
-                        <span class="feature-icon material-symbols-outlined">chat_bubble</span>
-                        <h3>Instant Chat</h3>
-                        <p>Connect with peers instantly. Fast, reactive messaging system with history persistence for
-                            seamless academic discussions.</p>
-                        <div class="feature-footer">
-                            <span class="text-[10px] font-bold text-blue-400">CONNECTIVITY</span>
+                    <div class="reveal bg-white/5 border border-white/10 p-8 rounded-[40px] hover:bg-white/10 transition-all" style="transition-delay: 100ms;">
+                        <div class="size-16 bg-indigo-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
+                            <span class="material-symbols-outlined text-3xl">psychology</span>
                         </div>
+                        <h4 class="text-xl font-black text-white mb-4">Peer Mentorship</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Connect with subject matter experts in real-time. Direct doubt resolution and academic guidance.</p>
                     </div>
-                </div>
-                <div class="feature-card reveal group" style="transition-delay: 0.2s;">
-                    <div class="feature-card-inner">
-                        <div class="feature-badge">SMART</div>
-                        <span class="feature-icon material-symbols-outlined">monitoring</span>
-                        <h3>Smart Analytics</h3>
-                        <p>Track your real engagement time with surgical precision. Intelligent activity monitoring
-                            follows your progress across the portal.</p>
-                        <div class="feature-footer">
-                            <span class="text-[10px] font-bold text-accent">DATA</span>
+                    <div class="reveal bg-white/5 border border-white/10 p-8 rounded-[40px] hover:bg-white/10 transition-all" style="transition-delay: 200ms;">
+                        <div class="size-16 bg-accent rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
+                            <span class="material-symbols-outlined text-3xl">analytics</span>
                         </div>
-                    </div>
-                </div>
-                <div class="feature-card reveal group" style="transition-delay: 0.3s;">
-                    <div class="feature-card-inner">
-                        <div class="feature-badge">CORE</div>
-                        <span class="feature-icon material-symbols-outlined">quiz</span>
-                        <h3>Live Quizzes</h3>
-                        <p>Test your knowledge with integrated assessments. Detailed tracking of starts and completions
-                            to measure your growth.</p>
-                        <div class="feature-footer">
-                            <span class="text-[10px] font-bold text-slate-400">ASSESSMENT</span>
-                        </div>
+                        <h4 class="text-xl font-black text-white mb-4">Success Analytics</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Track your progress with visual performance indicators. Identify gaps before they become problems.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Process Section -->
-    <section id="process" class="section bg-white/5">
-        <div class="container text-center">
-            <div class="reveal mb-16">
-                <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">The Workflow</p>
-                <h2 class="text-4xl font-black mb-12">How Edu Bridge Works.</h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="reveal">
-                    <div
-                        class="size-16 rounded-full border border-white/10 flex items-center justify-center text-3xl font-black mb-6 mx-auto bg-black">
-                        1</div>
-                    <h4 class="text-xl font-bold mb-4">Connect Portal</h4>
-                    <p class="text-slate-500 text-sm">Join the ecosystem by authenticating your student credentials
-                        securely.</p>
-                </div>
-                <div class="reveal" style="transition-delay: 0.1s;">
-                    <div
-                        class="size-16 rounded-full border border-white/10 flex items-center justify-center text-3xl font-black mb-6 mx-auto bg-black">
-                        2</div>
-                    <h4 class="text-xl font-bold mb-4">Master Resources</h4>
-                    <p class="text-slate-500 text-sm">Access curated notes, participate in chats, and take interactive
-                        quizzes.</p>
-                </div>
-                <div class="reveal" style="transition-delay: 0.2s;">
-                    <div
-                        class="size-16 rounded-full border border-white/10 flex items-center justify-center text-3xl font-black mb-6 mx-auto bg-black">
-                        3</div>
-                    <h4 class="text-xl font-bold mb-4">Achieve Excellence</h4>
-                    <p class="text-slate-500 text-sm">Monitor your progress through the analytics dashboard and excel in
-                        academics.</p>
+        <!-- Final CTA -->
+        <section class="py-40 px-6 text-center">
+            <div class="max-w-4xl mx-auto reveal">
+                <h2 class="text-5xl md:text-7xl font-black text-white tracking-tighter mb-8 leading-none">Ready to <span class="text-blue-500 italic">bridge the gap?</span></h2>
+                <p class="text-slate-400 text-lg mb-12 font-medium">Join thousands of students who have already transformed their academic workflow with Edu Bridge.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="openAuthModal()" class="w-full sm:w-auto px-12 py-5 bg-white text-black rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-500 hover:text-white transition-all shadow-2xl">
+                        Open Your Portal
+                    </button>
+                    <button class="w-full sm:w-auto px-12 py-5 bg-white/5 border border-white/10 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
+                        Contact Support
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Community Section -->
-    <section class="section relative overflow-hidden">
-        <div class="absolute inset-0 bg-blue-600/5 blur-[120px] pointer-events-none"></div>
-        <div class="container bg-black border border-white/5 rounded-[40px] p-12 lg:p-24 text-center relative z-10">
-            <div class="reveal">
-                <h2 class="text-5xl lg:text-7xl font-black mb-8 leading-tight">Ready to bridge the gap?</h2>
-                <p class="text-slate-400 text-lg mb-12 max-w-2xl mx-auto">Join thousands of students who have already
-                    transformed their academic workflow with Edu Bridge.</p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <button id="footer-open-portal" class="cta-button w-full sm:w-auto">Open Your Portal</button>
-                    <a href="chat.html"
-                        class="px-8 py-[18px] border border-white/10 rounded-full font-bold hover:bg-white hover:text-black transition-all w-full sm:w-auto">Contact
-                        Support</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Auth & Onboarding Modal -->
     <div id="auth-modal"
@@ -399,54 +355,51 @@
                             onmouseout="this.style.borderColor='#e2e8f0';this.style.background='white'">
                             <div
                                 style="width:52px;height:52px;background:#eff6ff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">
-                                🏫</div>
+                                👨‍🏫</div>
                             <div>
                                 <p style="font-size:16px;font-weight:800;color:#0f172a;margin:0 0 4px;">Faculty</p>
-                                <p style="font-size:13px;color:#64748b;margin:0;">Official academic staff &amp; content
-                                    management</p>
+                                <p style="font-size:13px;color:#64748b;margin:0;">Manage users, analytics &amp; broadcast
+                                </p>
                             </div>
                         </button>
                     </div>
                 </div>
 
-                <!-- Step 3: Onboarding Form -->
+                <!-- Step 3: Profile Form -->
                 <div id="step-form" style="display:none;">
                     <div style="text-align:center;margin-bottom:32px;">
-                        <h2 style="font-size:26px;font-weight:900;color:#0f172a;margin:0 0 8px;">Complete Your Profile
-                        </h2>
-                        <p style="font-size:13px;color:#64748b;margin:0;">Just a few more details to set up your account
-                        </p>
+                        <h2 style="font-size:26px;font-weight:900;color:#0f172a;margin:0 0 8px;">Final Touches</h2>
+                        <p style="font-size:14px;color:#64748b;margin:0;">Help us personalize your workspace.</p>
                     </div>
-                    <form id="onboarding-form" style="max-height:55vh;overflow-y:auto;padding-right:4px;">
-                        <!-- Personal Info -->
-                        <div style="margin-bottom:24px;">
+                    <form id="onboarding-form" style="display:flex;flex-direction:column;gap:20px;">
+                        <!-- Basic Info -->
+                        <div style="display:flex;flex-direction:column;gap:16px;">
                             <p
-                                style="font-size:11px;font-weight:800;color:#0056b2;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 14px;padding-bottom:8px;border-bottom:1.5px solid #e2e8f0;">
-                                👤 Personal Information</p>
+                                style="font-size:11px;font-weight:800;color:#0056b2;text-transform:uppercase;letter-spacing:0.1em;margin:0;padding-bottom:8px;border-bottom:1.5px solid #e2e8f0;">
+                                👤 Identity</p>
+                            <div>
+                                <label
+                                    style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Full
+                                    Name</label>
+                                <input name="name" type="text" required placeholder="Nanda Kishore..."
+                                    style="width:100%;padding:14px 16px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;outline:none;font-family:inherit;box-sizing:border-box;transition:border-color 0.2s;color:#0f172a;"
+                                    onfocus="this.style.borderColor='#0056b2';this.style.background='white'"
+                                    onblur="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">
+                            </div>
                             <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-                                <div style="grid-column:1/-1;">
+                                <div>
                                     <label
-                                        style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Full
-                                        Name *</label>
-                                    <input name="name" required type="text" placeholder="As per college records"
+                                        style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Contact</label>
+                                    <input name="contact_number" type="tel" required placeholder="9876..."
                                         style="width:100%;padding:14px 16px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;outline:none;font-family:inherit;box-sizing:border-box;transition:border-color 0.2s;color:#0f172a;"
                                         onfocus="this.style.borderColor='#0056b2';this.style.background='white'"
                                         onblur="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">
                                 </div>
-                                <div>
-                                    <label
-                                        style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Mobile
-                                        *</label>
-                                    <input name="contact_number" required type="tel" placeholder="+91 XXXXX XXXXX"
-                                        style="width:100%;padding:14px 16px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;outline:none;font-family:inherit;box-sizing:border-box;transition:border-color 0.2s;color:#0f172a;"
-                                        onfocus="this.style.borderColor='#0056b2';this.style.background='white'"
-                                        onblur="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">
-                                </div>
-                                <div>
+                                <div id="reg-field">
                                     <label
                                         style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:6px;">Register
-                                        No.</label>
-                                    <input name="register_number" type="text" placeholder="e.g. 2127CS001"
+                                        No</label>
+                                    <input name="register_number" type="text" placeholder="2127..."
                                         style="width:100%;padding:14px 16px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;outline:none;font-family:inherit;box-sizing:border-box;transition:border-color 0.2s;color:#0f172a;"
                                         onfocus="this.style.borderColor='#0056b2';this.style.background='white'"
                                         onblur="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">
@@ -512,6 +465,8 @@
 
             </div>
         </div>
+    </div>
+
     <!-- Unified Leadership & Credits Hub -->
     <footer class="py-32 bg-black relative overflow-hidden border-t border-white/5">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#1e1b4b,transparent)] opacity-50"></div>
@@ -569,64 +524,23 @@
     </footer>
 
     <!-- Scripts -->
-    <!-- Scripts -->
     <script type="module">
-        import { supabase } from './assets/js/supabase-client.js';
+        import { supabase } from './assets/js/supabase.js';
         import * as auth from './assets/js/auth.js';
 
-        console.log("EduBridge Ecosystem initialized.");
-
-        // --- UI Globals ---
-        const modal = document.getElementById('auth-modal');
-        const loginBtn = document.getElementById('google-login-btn');
-        let selectedRole = 'student';
+        // Auth Logic for Landing Page
         let currentUser = null;
+        let selectedRole = 'student';
 
-        async function handleAuthTrigger() {
-            console.log("Auth trigger initiated.");
-
-            // Always reset modal to clean login state before opening
-            document.getElementById('step-login').style.display = 'block';
-            document.getElementById('step-role').style.display = 'none';
-            document.getElementById('step-form').style.display = 'none';
-            document.getElementById('auth-progress').style.width = '33%';
-            const loginError = document.getElementById('login-error');
-            if (loginError) { loginError.style.display = 'none'; loginError.textContent = ''; }
-            const lb = document.getElementById('google-login-btn');
-            if (lb) { lb.disabled = false; lb.innerHTML = '<img src="https://www.google.com/favicon.ico" width="24" height="24" alt="G" style="margin-right:8px;"> Continue with Google'; }
-
-            const user = await auth.getCurrentUser();
-            if (user) {
-                // If a non-svce session is somehow lingering, clear it
-                if (!auth.validateEmail(user.email)) {
-                    await supabase.auth.signOut();
-                    openAuthModal();
-                    showLoginError('⚠️ That account is not authorized. Use your @svce.ac.in email.');
-                    return;
-                }
-                const profile = await auth.getUserProfile(user.id);
-                if (profile) {
-                    window.location.href = '/dashboard.html';
-                    return;
-                }
-                // Valid user but no profile — go to onboarding
-                openAuthModal();
-                document.getElementById('step-login').style.display = 'none';
-                document.getElementById('step-role').style.display = 'block';
-                document.getElementById('auth-progress').style.width = '66%';
-                document.getElementById('user-email-display').innerText = user.email;
-                return;
-            }
-            openAuthModal();
-        }
-
-        function openAuthModal() {
+        window.openAuthModal = () => {
+            const modal = document.getElementById('auth-modal');
             modal.style.opacity = '1';
             modal.style.pointerEvents = 'auto';
             document.getElementById('auth-modal-inner').style.transform = 'scale(1)';
-        }
+        };
 
         window.closeAuthModal = () => {
+            const modal = document.getElementById('auth-modal');
             modal.style.opacity = '0';
             modal.style.pointerEvents = 'none';
             document.getElementById('auth-modal-inner').style.transform = 'scale(0.95)';
@@ -637,115 +551,23 @@
             document.getElementById('step-role').style.display = 'none';
             document.getElementById('step-form').style.display = 'block';
             document.getElementById('auth-progress').style.width = '100%';
-            const studentFields = document.getElementById('student-only-fields');
-            if (role === 'faculty') studentFields.style.display = 'none';
-            else studentFields.style.display = 'block';
+            if (role === 'faculty') {
+                document.getElementById('student-only-fields').style.display = 'none';
+                document.getElementById('reg-field').style.display = 'none';
+            }
         };
 
-        // --- Attachment ---
-        const authTriggers = ['nav-get-started', 'hero-explore', 'footer-open-portal'];
-        authTriggers.forEach(id => {
-            const btn = document.getElementById(id);
-            if (btn) btn.addEventListener('click', handleAuthTrigger);
+        document.getElementById('google-login-btn').addEventListener('click', () => {
+            auth.signInWithGoogle();
         });
 
-        // --- Auth Event Listeners ---
-        if (loginBtn) {
-            loginBtn.addEventListener('click', async () => {
-                loginBtn.disabled = true;
-                loginBtn.innerHTML = '<span style="opacity:0.7;">Redirecting to Google...</span>';
-                try {
-                    await auth.signInWithGoogle();
-                } catch (err) {
-                    console.error('Login error:', err);
-                    loginBtn.disabled = false;
-                    loginBtn.innerHTML = '<img src="https://www.google.com/favicon.ico" width="24" height="24" alt="G"> Continue with Google';
-                    showLoginError('Sign-in failed. Please try again.');
-                }
-            });
-        }
-
-        function showLoginError(msg) {
-            const loginError = document.getElementById('login-error');
-            if (!loginError) return;
-            loginError.textContent = msg;
-            loginError.style.display = 'block';
-            // Show toast notification
-            showToast(msg);
-        }
-
-        function showToast(msg) {
-            let toast = document.getElementById('auth-toast');
-            if (!toast) {
-                toast = document.createElement('div');
-                toast.id = 'auth-toast';
-                toast.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(100px);background:#1e293b;color:white;padding:16px 28px;border-radius:16px;font-size:14px;font-weight:700;z-index:99999;box-shadow:0 16px 48px rgba(0,0,0,0.4);transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1),opacity 0.4s;opacity:0;max-width:480px;text-align:center;border-left:4px solid #ef4444;';
-                document.body.appendChild(toast);
-            }
-            toast.innerHTML = '🚫 ' + msg;
-            // Animate in
-            requestAnimationFrame(() => {
-                toast.style.transform = 'translateX(-50%) translateY(0)';
-                toast.style.opacity = '1';
-            });
-            // Auto-dismiss after 4s
-            clearTimeout(toast._timer);
-            toast._timer = setTimeout(() => {
-                toast.style.transform = 'translateX(-50%) translateY(100px)';
-                toast.style.opacity = '0';
-            }, 4000);
-        }
-
         const initLandingAuth = async () => {
-            // --- Live Stats Fetching ---
-            try {
-                // Fetch user count
-                const { count: userCount, error: userErr } = await supabase
-                    .from('users')
-                    .select('*', { count: 'exact', head: true });
-                
-                // Fetch notes count
-                const { count: notesCount, error: notesErr } = await supabase
-                    .from('notes')
-                    .select('*', { count: 'exact', head: true });
-
-                if (!userErr) {
-                    const studentEl = document.getElementById('stat-students');
-                    if (studentEl) studentEl.textContent = userCount > 999 ? (userCount / 1000).toFixed(1) + 'K' : userCount;
-                }
-                
-                if (!notesErr) {
-                    const notesEl = document.getElementById('stat-notes');
-                    if (notesEl) notesEl.textContent = notesCount > 999 ? (notesCount / 1000).toFixed(1) + 'K' : notesCount;
-                }
-            } catch (err) {
-                console.warn("Stats fetch failed:", err);
-            }
-
-            const user = await auth.getCurrentUser();
+            const { data: { user } } = await supabase.auth.getUser();
             if (user) {
-                // Domain Validation
-                if (!auth.validateEmail(user.email)) {
-                    // SIGN THEM OUT immediately — don't keep an invalid session
-                    await supabase.auth.signOut();
-                    // Keep modal open at step-login with clear error
-                    openAuthModal();
-                    document.getElementById('step-login').style.display = 'block';
-                    document.getElementById('step-role').style.display = 'none';
-                    document.getElementById('step-form').style.display = 'none';
-                    // Reset login button
-                    const lb = document.getElementById('google-login-btn');
-                    if (lb) { lb.disabled = false; lb.innerHTML = '<img src="https://www.google.com/favicon.ico" width="24" height="24" alt="G"> Continue with Google'; }
-                    // Show error in modal + toast
-                    showLoginError('Access denied — only @svce.ac.in emails are permitted.');
-                    return;
-                }
-
                 currentUser = user;
                 const profile = await auth.getUserProfile(user.id);
-
                 if (profile) {
-                    // Already has profile, direct to dashboard
+                    // Already registered
                     window.location.href = '/dashboard.html';
                 } else {
                     // Start Onboarding
