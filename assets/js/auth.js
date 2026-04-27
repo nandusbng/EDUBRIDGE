@@ -53,7 +53,8 @@ export async function checkFacultyAccess(email) {
   // Hardcoded Faculty Whitelist for core staff
   const FACULTY_WHITELIST = [
     'rkkapilavani@svce.ac.in',
-    'ranitha@svce.ac.in'
+    'ranitha@svce.ac.in',
+    'revathi@svce.ac.in'
   ];
 
   if (FACULTY_WHITELIST.includes(email)) return true;
